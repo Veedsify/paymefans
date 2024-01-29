@@ -1,4 +1,5 @@
 import { ImageVerification } from "@/components/sub_componnets/imageVerification";
+import VideoVerification from "@/components/sub_componnets/videoverification";
 import { LucideInfo } from "lucide-react";
 
 const Verification = () => {
@@ -28,15 +29,7 @@ const Verification = () => {
                 </p>
                 <form className="flex items-center justify-center gap-6 max-w-96 mx-auto mb-12">
                     <ImageVerification />
-                    <div>
-                        <label htmlFor="videos">
-                            <div className="flex bg-gray-200 items-center justify-center aspect-square rounded-xl mb-3 cursor-pointer">
-                                <img src="/site/verification_videos.png" alt="" className="block text-center mx-auto mb-4" />
-                            </div>
-                            <p className="text-center text-sm font-medium">Upload 3 different photos of you</p>
-                        </label>
-                        <input type="file" multiple={true} accept="image/*" className="hidden" name="videos" id="videos" />
-                    </div>
+                    <VideoVerification />
                 </form>
                 <div className="bg-coins-card-bottom max-w-96 mx-auto p-4 py-4 rounded-xl flex items-center gap-4" >
                     <span>

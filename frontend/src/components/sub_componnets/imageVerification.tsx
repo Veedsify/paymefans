@@ -9,6 +9,10 @@ export const ImageVerification = () => {
                 toast.error("You must upload at least 3 images");
                 return;
             }
+            if (e.target.files.length > 3) {
+                toast.error("You can only upload 3 images");
+                return;
+            }
             const files = e.target.files;
             if (files) {
                 for (let i = 0; i < files.length; i++) {
