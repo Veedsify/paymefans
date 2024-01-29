@@ -10,7 +10,7 @@ const Login = () => {
                 </Link>
             </div>
             <div className="flex flex-col items-start justify-center max-w-screen-xl mx-auto">
-                <h1 className="mt-auto mb-5 text-2xl font-bold text-white">Sign in</h1>
+                <h1 className="mt-auto mb-5 text-2xl font-bold text-white ">Sign in</h1>
                 <form action="" className="flex-1 w-full mb-5">
                     <div className="flex flex-col gap-3 mb-4 md:max-w-96">
                         <input type="email" id="email" className="block w-full px-3 py-3 text-sm font-bold text-white bg-transparent rounded-lg outline outline-white outline-1" placeholder="Email" />

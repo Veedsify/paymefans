@@ -5,3 +5,7 @@
 * {
     font-family: "Satoshi" sans-serif;
 }
+
+.aspect-long {
+    aspect-ratio: 9/16;
+}

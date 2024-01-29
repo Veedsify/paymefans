@@ -6,7 +6,9 @@ import User_Layouts from './layouts/user_layout'
 import Register from './routes/register/register'
 import { useEffect, useState } from 'react'
 import Loader from './components/route_component/loader'
-import ChooseUserName from './routes/username/username'
+import ChooseUserName from './routes/register/username/username'
+import Subscribe from './routes/subscribe/subscribe'
+import Verification from './routes/public_verification/verification'
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -31,6 +33,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/register/username" element={<ChooseUserName />} />
+          <Route path="/subscribe" element={<Subscribe />} />
+          <Route path="/verification" element={<Verification />} />
 
           {/* PATHS WITHOUT LAYOUTS */}
           <Route path="/" element={<Home_Layouts />} />
