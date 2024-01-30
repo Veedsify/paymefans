@@ -34,7 +34,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/register/username" element={<ChooseUserName />} />
           <Route path="/subscribe" element={<Subscribe />} />
-          <Route path="/verification" element={<Verification />} />
+          {/* <Route path="/verification" element={<Verification />} /> */}
 
           {/* PATHS WITHOUT LAYOUTS */}
           <Route path="/" element={<Home_Layouts />} />
