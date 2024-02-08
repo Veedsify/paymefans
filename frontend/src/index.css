@@ -11,8 +11,52 @@
     /* Aspect to Video */
 }
 
+.aspect-21-9 {
+    aspect-ratio: 21/6;
+}
+
+.smart-width {
+    width: min(100%, 288px);
+}
+
+/* Custom scrollbar */
+.clean-sidebar::-webkit-scrollbar {
+    height: 1px;
+    width: 5px;
+}
+
+.clean-sidebar::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+}
+
+.clean-sidebar::-webkit-scrollbar-thumb {
+    background-color: #be04d6;
+    border-radius: 4px;
+}
+
+.clean-sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #400546;
+}
+
+.chat_height{
+    height: calc(100vh - 81px);
+}
+
+.swal-icon--custom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 ;
+}
+.swal-icon--custom{
+    scale: 2;
+}
 
 @media screen and (min-width: 1024px) {
+    .clean-sidebar::-webkit-scrollbar {
+        width: 0px;
+        height: 5px;
+    }
 
     /* Custom scrollbar */
     ::-webkit-scrollbar {
@@ -32,3 +76,7 @@
         background-color: #400546;
     }
 }
+
+/* .bg_gradien_stream {
+    background: linear-gradient(180deg rgb(255, 1, 1), rgb(29, 8, 222));
+} */

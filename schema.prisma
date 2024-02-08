@@ -1,0 +1,349 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  email             String   @unique
+  name              String
+  password          String
+  user_id           String   @unique
+  username          String   @unique
+  role              String   @default("user")
+  is_active         Boolean  @default(true)
+  is_verified       Boolean  @default(false)
+  is_email_verified Boolean  @default(false)
+  is_model          Boolean  @default(false)
+  email_verify_code String
+  email_verify_time DateTime
+  is_phone_verified Boolean  @default(false)
+  phone             String   @unique
+  profile_image     Json
+  profile_banner    Json
+  bio               String
+  location          String
+  website           String
+  country           String
+  state             String
+  city              String
+  zip               String
+  post_watermark    String?
+  total_followers   Int      @default(0)
+  total_following   Int      @default(0)
+  total_subscribers Int      @default(0)
+  admin_status      Boolean  @default(true)
+  created_at        DateTime @default(now())
+  updated_at        DateTime @updatedAt
+}
+
+model UserMedia {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  media_id      String
+  user_id       String
+  media_type    String
+  media         Json
+  post_image    Json
+  locked        Boolean  @default(false)
+  accessible_to String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model UserRepost {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  repost_id  String
+  user_id    String
+  post_id    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model UserLockedMedia {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id    String
+  media_id   String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model UserStory {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  story_id     String
+  user_id      String
+  story        Json
+  story_type   String
+  posted_at    DateTime @default(now())
+  expected_end DateTime
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+}
+
+model Post {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  post_id         String
+  was_repost      Boolean  @default(false)
+  user_id         String
+  title           String
+  description     String
+  post_type       String
+  image           Json
+  video           Json
+  post_status     String
+  post_is_visible Boolean  @default(true)
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model PostComment {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  comment_id String
+  user_id    String
+  post_id    String
+  comment    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model PostLike {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  like_id    String
+  user_id    String
+  post_id    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model PostShared {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  shared_id  String
+  user_id    String?
+  post_id    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Follow {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  follow_id   String
+  user_id     String
+  follower_id String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model Subscribers {
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  sub_id        String
+  user_id       String
+  subscriber_id String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+}
+
+model LiveStream {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  user_id     String
+  live_id     String
+  title       String
+  description String
+  image       Json
+  video       Json
+  live_status String
+  live_start  DateTime  @default(now())
+  live_end    DateTime?
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+}
+
+model LiveStreamComment {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  live_comment_id String
+  user_id         String
+  live_id         String
+  comment         String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model LiveStreamLike {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  live_like_id String
+  user_id      String
+  live_id      String
+  created_at   DateTime @default(now())
+  updated_at   DateTime @updatedAt
+}
+
+model LiveStreamView {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id    String
+  live_id    String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Settings {
+  id                    String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id               String
+  price_per_message     Float
+  enable_free_message   Boolean
+  subscription_price    Float
+  subscription_type     String
+  subscription_duration String
+  created_at            DateTime @default(now())
+  updated_at            DateTime @updatedAt
+}
+
+model Messages {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  message_id  String
+  sender_id   String
+  receiver_id String
+  status      String
+  seen        Boolean  @default(false)
+  message     String
+  attachment  Json
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model Notifications {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  notification_id String
+  user_id         String
+  message         String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model ReportUser {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  report_id   String
+  user_id     String
+  reported_id String
+  report_type String
+  report      String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model ReportPost {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  report_id   String
+  user_id     String
+  post_id     String
+  report_type String
+  report      String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model ReportComment {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  report_id   String
+  user_id     String
+  comment_id  String
+  report_type String
+  report      String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model ReportLive {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  report_id   String
+  user_id     String
+  live_id     String
+  report_type String
+  report      String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model ReportMessage {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  report_id   String
+  user_id     String
+  message_id  String
+  report_type String
+  report      String
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+}
+
+model UserPoints {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id         String
+  points          Int
+  conversion_rate Float
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model UserWallet {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id    String
+  wallet_id  String
+  balance    Float
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model UserTransaction {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  transaction_id String
+  user_id        String
+  wallet_id      String
+  amount         Float
+  transaction    String
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+}
+
+model UserSubscriptionCurrent {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  subscription_id String
+  user_id         String
+  subscription    String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model UserSubscriptionHistory {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  subscription_id String
+  user_id         String
+  subscription    String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model GlobalPointsBuy {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  points_buy_id   String
+  user_id         String
+  points          Int
+  amount          Float
+  conversion_rate Float
+  currency        String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}
+
+model UserWithdrawalBankAccount {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id         String
+  bank_account_id String
+  bank_name       String
+  account_name    String
+  account_number  String
+  routing_number  String
+  bank_country    String
+  created_at      DateTime @default(now())
+  updated_at      DateTime @updatedAt
+}

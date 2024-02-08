@@ -14,12 +14,10 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
-            'phone'=> 'required|string',
+            'phone' => 'required|string',
             'password' => 'required|string',
             'country' => 'required|string',
             'terms' => 'required|string',
         ]);
-
-        
     }
 }

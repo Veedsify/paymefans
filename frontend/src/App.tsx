@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
-    }, 100)
+    }, 3000)
   }, [])
 
   if (loading) {

@@ -1,20 +1,26 @@
+import { useSideBarContext } from "@/lib/pageContexts";
 import { LucideBellRing } from "lucide-react";
+import HeaderTitle from "../sub_componnets/header_title";
 
 const Header = () => {
+    const { setSideBar } = useSideBarContext()
     return (
-        <header className="border-b py-6 px-8 bg-primary-dark-pink md:bg-white">
+        <header className="px-4 lg:px-8 py-3 border-b bg-primary-dark-pink lg:bg-white">
             <div className="flex items-center">
-                <h1 className="font-bold text-lg hidden md:block">Home</h1>
-                <img src="/site/logo3.png" alt="" className="md:hidden block" />
-                <ul className="ml-auto flex items-center gap-6 md:hidden">
+                <HeaderTitle />
+                <img src="/site/logo3.png" alt="" className="block lg:hidden" />
+                <ul className="flex items-center gap-6 ml-auto lg:hidden">
                     <li>
                         <span>
                             <LucideBellRing stroke="#fff" />
                         </span>
                     </li>
                     <li>
-                        <span>
-                            <img src="/images/user.png" alt="" />
+                        <span
+                            className="block w-12 h-12 border-2 border-white rounded-full cursor-pointer"
+                            onClick={() => setSideBar(true)}
+                        >
+                            <img src="/images/user.png" alt="" className="w-full h-full object-cover rounded-full" />
                         </span>
                     </li>
                 </ul>
