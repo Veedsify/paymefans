@@ -1,6 +1,6 @@
 export interface Countries {
   name: string;
-  code: string;
+  code: string | null;
 }
 export const countries: Countries[] = [
   { name: "Afghanistan", code: "AF" },

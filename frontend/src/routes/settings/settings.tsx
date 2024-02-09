@@ -18,92 +18,71 @@ const Settings = () => {
       </div>
 
       {/* <form onSubmit={(e) => e.preventDefault()} action=""> */}
-        <div>
+      <div>
+        <input
+          type="text"
+          className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
+          placeholder="Name "
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
+          placeholder="Location "
+        />
+      </div>
+      <div>
+        <input
+          type="email"
+          className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
+          placeholder="Email "
+        />
+      </div>
+      <div>
+        <textarea
+          name=""
+          id=""
+          rows={6}
+          className="resize-none w-full block outline-none border mb-3 border-gray-300 p-4 text-black rounded-xl"
+          placeholder="Bio"
+        ></textarea>
+      </div>
+      <div>
+        <input
+          type="text"
+          className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
+          placeholder="Website "
+        />
+      </div>
+      <h1 className="font-bold mb-2">Set your message amount</h1>
+      <div className="w-full border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl flex gap-2 ">
+        <div className="flex gap-2 w-full">
+          <img src="/site/coin.svg" alt="" />
           <input
-            type="text"
-            className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
-            placeholder="Name "
+            type="number"
+            placeholder="Price"
+            className="w-full outline-none font-bold text-gray-700"
           />
         </div>
-        <div>
-          <input
-            type="text"
-            className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
-            placeholder="Location "
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
-            placeholder="Email "
-          />
-        </div>
-        <div>
-          <textarea
-            name=""
-            id=""
-            rows={6}
-            className="resize-none w-full block outline-none border mb-3 border-gray-300 p-4 text-black rounded-xl"
-            placeholder="Bio"
-          ></textarea>
-        </div>
-        <div>
-          <input
-            type="text"
-            className="w-full block border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl"
-            placeholder="Website "
-          />
-        </div>
+        <h2 className="text-primary-dark-pink font-bold">₦0</h2>
+      </div>
 
-        <div>
-          <label
-            htmlFor="file"
-            className=" border-[3px] mb-7  block p-2 rounded-xl border-dotted cursor-pointer"
-          >
-            <input type="file" id="file" className="hidden" />
-            <img
-              src="/images/login_image.png"
-              alt=""
-              className="w-16 aspect-square rounded-lg mr-3 inline-block object-cover"
-            />
-            <div className="inline-block ">
-              <h1 className="font-bold text-slate-500">Upload Banner Image</h1>
-              <small className="font-bold text-[10px] text-slate-500">
-                5MB MAX
-              </small>
-            </div>
-          </label>
-        </div>
+      <span className="inline-flex gap-2 my-4">
+        <Toggle />
+        Enable free message
+      </span>
 
-        <h1 className="font-bold mb-2">Set your message amount</h1>
-        <div className="w-full border mb-3 border-gray-300 p-4 outline-none text-black rounded-xl flex gap-2 ">
-          <div className="flex gap-2 w-full">
-            <img src="/site/coin.svg" alt="" />
-            <input
-              type="number"
-              placeholder="Price"
-              className="w-full outline-none font-bold text-gray-700"
-            />
-          </div>
-          <h2 className="text-primary-dark-pink font-bold">₦0</h2>
-        </div>
+      <button onClick={() => setSubscriptionState(!subscription)}
+        className="text-center bg-[#FAE2FF] my-2 text-primary-dark-pink w-full p-4 rounded-xl block cursor-pointer font-bold">
+        SET SUBSCRIPTION PRICE
+      </button>
 
-        <span className="inline-flex gap-2 my-4">
-          <Toggle />
-          Enable free message
-        </span>
+      {subscription && (<SetSubscription />)}
 
-        <button onClick={() => setSubscriptionState(!subscription)}
-          className="text-center bg-[#FAE2FF] my-2 text-primary-dark-pink w-full p-4 rounded-xl block cursor-pointer font-bold">
-          SET SUBSCRIPTION PRICE
-        </button>
-
-        {subscription && (<SetSubscription />)}
-
-        <button className="text-center text-white bg-primary-dark-pink w-full p-4 rounded-xl">
-          SAVE
-        </button>
+      <button className="text-center text-white bg-primary-dark-pink w-full p-4 rounded-xl">
+        SAVE
+      </button>
       {/* </form> */}
     </div>
   );

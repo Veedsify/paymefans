@@ -37,7 +37,7 @@ const Wallet = () => {
                 <button className="block text-sm text-center bg-coins-card-bottom px-6 py-3 rounded-md w-full text-primary-dark-pink font-semibold">WITHDRAW</button>
             </div>
             <div>
-                <Link to="" className="block text-center bg-coins-card-bottom px-6 py-3 rounded-md w-full text-primary-dark-pink font-semibold my-5 text-sm md:text-base">SET WITHDRAWAL BANK ACCOUNT</Link>
+                <Link to="/mix/wallet/add" className="block text-center bg-coins-card-bottom px-6 py-3 rounded-md w-full text-primary-dark-pink font-semibold my-5 text-sm md:text-base">SET WITHDRAWAL BANK ACCOUNT</Link>
             </div>
         </div>
     );

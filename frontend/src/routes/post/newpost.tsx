@@ -108,6 +108,7 @@ const NewPost = () => {
                         </div>
                     </button>
                 </div>
+                
                 <textarea
                     className="block text-sm leading-relaxed text-gray-700 font-medium w-full resize-none p-3 outline-none mt-3 overflow-auto h-[40vh]"
                     placeholder="What’s on your mind?"

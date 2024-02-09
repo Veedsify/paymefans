@@ -13,6 +13,8 @@ import Live from '@/routes/live/live';
 import Stream from '@/routes/stream/livestream';
 import Settings from '@/routes/settings/settings';
 import NewPost from '@/routes/post/newpost';
+import { ModelVerificationSuccess } from '@/routes/models/verify';
+import WalletAddBank from '@/routes/wallet/wallet_add_bank';
 const User_Layouts = () => {
     return (
         <>
@@ -22,6 +24,9 @@ const User_Layouts = () => {
                 <Route path="/messages" element={<Messages />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/models/benefits" element={<Models />} />
+                <Route path="/models/become-a-model" element={<BecomeAModel />} />
+                {/*  */}
+                <Route path="/models/verify" element={<ModelVerificationSuccess />} />
                 <Route path="/posts/:id" element={<Post />} />
                 <Route path="/posts/new" element={<NewPost />} />
                 <Route path="/live" element={<Live />} />
@@ -29,6 +34,7 @@ const User_Layouts = () => {
                 <Route path="/" element={<HomeRoutes />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/wallet" element={<Wallet />} />
+                <Route path="/wallet/add" element={<WalletAddBank />} />
                 <Route path="/points" element={<Points />} />
                 <Route path="/store" element={<Store />} />
             </Routes>
