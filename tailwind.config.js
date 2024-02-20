@@ -8,8 +8,8 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Epilogue", "serif"],
-        serif: ["Epilogue", "serif"],
+        sans: ["Plus Jakarta Sans", "serif"],
+        serif: ["Plus Jakarta Sans", "serif"],
       },
       colors: {
         white: "#ffffff",
@@ -24,6 +24,7 @@ const config = {
         "coins-card-bottom": "#FAE2FF",
         "coins-card-top": "#e057ff",
       },
+
     },
   },
   plugins: [],

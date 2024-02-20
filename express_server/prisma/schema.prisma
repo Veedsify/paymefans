@@ -27,8 +27,8 @@ model User {
   email_verify_time DateTime?
   is_phone_verified Boolean   @default(false)
   phone             String    @unique
-  profile_image     Json?
-  profile_banner    Json?
+  profile_image     String?
+  profile_banner    String?
   bio               String?
   location          String?
   website           String?

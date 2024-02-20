@@ -16,7 +16,7 @@ const Home_Layout = () => {
                 <SideBar />
             </div>
             <div className="col-span-7 overflow-auto border-r">
-                <Header />
+            <Header />
                 <div className="grid min-h-screen lg:grid-cols-7 ">
                     <div className="col-span-4 md:border-r">
                         <Routes>

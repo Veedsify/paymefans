@@ -11,7 +11,7 @@ const Chats = () => {
     return (
         <div className="relative chat_height">
             <div className="flex items-center border-b py-6 px-5 pb-6">
-                <div className="mr-6 sm:mr-10">
+            <div className="mr-6 sm:mr-10">
                     <Link to="/mix/messages">
                         <LucideArrowLeft size={30} className="cursor-pointer" />
                     </Link>

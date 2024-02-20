@@ -11,41 +11,57 @@ const Messages = () => {
                 <input type="text" placeholder="Search Messages" className=" text-sm outline-none border-none" />
                 <LucideSearch className="block text-center" />
             </div>
-            <Link to="/mix/chats/1" className="block bg-messages-unread mb-3 rounded">
-                <div className="flex items-center gap-2 md:gap-5 p-3">
-                    <img src="/images/user.png" alt="" className="object-cover rounded-full md:w-16 aspect-square" />
-                    <div className="flex-1">
-                        <div className="flex flex-1 text-sm gap-4 mb-2 w-full">
-                            <h1 className="font-bold"><Link to="/">Kesha Adams</Link></h1>
-                            <p className="hidden md:block"><Link to="/">@keshaadams</Link></p>
-                            <div className="flex items-center gap-2 ml-auto">
-                                <p className="hidden md:block">Jan 22</p>
-                                <span className="text-white w-2 h-2 bg-primary-dark-pink rounded-full block"></span>
+            <div>
+                <div className="block bg-messages-unread mb-3 rounded cursor-pointer" data-link="/mix/chats/1" >
+                    <div className="flex items-center gap-2 md:gap-5 p-3">
+                        <Link to="/mix/profile">
+                            <img src="/images/user.png" alt="" className="object-cover rounded-full w-12  md:w-16 aspect-square" />
+                        </Link>
+                        <div className="flex-1">
+                            <div className="flex flex-1 text-sm gap-4 mb-2 w-full">
+                                <Link to="/"><h1 className="font-bold">Kesha Adams</h1></Link>
+                                <Link to="/">
+                                    <p className="hidden md:block">@keshaadams</p>
+                                </Link>
+                                <div className="flex items-center gap-2 ml-auto">
+                                    <p className="hidden md:block">Jan 22</p>
+                                    <span className="text-white w-2 h-2 bg-primary-dark-pink rounded-full block"></span>
+                                </div>
                             </div>
-                        </div>
-                        <div className="text-sm">
-                            <p className="text-xs md:text-sm">Hey, I need to talk to you about something.....</p>
+                            <div className="text-sm">
+                                <Link to="/mix/chats/1">
+                                    <p className="text-xs md:text-sm">Hey, I need to talk to you about something.....</p>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </Link>
-            <Link to="/mix/chats/1" className="block mb-3 rounded">
-                <div className="flex items-center gap-2 md:gap-5 p-3">
-                    <img src="/images/user.png" alt="" className="object-cover rounded-full md:w-16 aspect-square" />
-                    <div className="flex-1">
-                        <div className="flex flex-1 text-sm gap-4 mb-2 w-full">
-                            <h1 className="font-bold"><Link to="/">Kesha Adams</Link></h1>
-                            <p className="hidden md:block"><Link to="/">@keshaadams</Link></p>
-                            <div className="ml-auto">
-                                <p className="hidden md:block">Jan 22</p>
+                <div>
+                    <div className="block mb-3 rounded cursor-pointer" data-link="/mix/chats/1" >
+                        <div className="flex items-center gap-2 md:gap-5 p-3">
+                            <Link to="/mix/profile">
+                                <img src="/images/user.png" alt="" className="object-cover rounded-full w-12  md:w-16 aspect-square" />
+                            </Link>
+                            <div className="flex-1">
+                                <div className="flex flex-1 text-sm gap-4 mb-2 w-full">
+                                    <Link to="/"> <h1 className="font-bold">Kesha Adams</h1></Link>
+                                    <Link to="/">
+                                        <p className="hidden md:block">@keshaadams</p>
+                                    </Link>
+                                    <div className="ml-auto">
+                                        <p className="hidden md:block">Jan 22</p>
+                                    </div>
+                                </div>
+                                <div className="text-sm">
+                                    <Link to="/mix/chats/1">
+                                        <p className="text-xs md:text-sm">Hey, I need to talk to you about something.....</p>
+                                    </Link>
+                                </div>
                             </div>
-                        </div>
-                        <div className="text-sm">
-                            <p className="text-xs md:text-sm">Hey, I need to talk to you about something.....</p>
                         </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         </div>
     );
 }

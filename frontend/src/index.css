@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    font-family: "Satoshi" sans-serif;
+    font-family: "Epilogue", sans-serif;
 }
 
 .aspect-long {
@@ -38,17 +38,18 @@
     background-color: #400546;
 }
 
-.chat_height{
+.chat_height {
     height: calc(100vh - 81px);
 }
 
-.swal-icon--custom{
+.swal-icon--custom {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 2rem 0 ;
+    margin: 2rem 0;
 }
-.swal-icon--custom{
+
+.swal-icon--custom {
     scale: 2;
 }
 
@@ -75,8 +76,16 @@
     ::-webkit-scrollbar-thumb:hover {
         background-color: #400546;
     }
+
+    .min-h-screen-custom {
+        height: max(calc(100vh - 53px), 100vh);
+    }
 }
 
-/* .bg_gradien_stream {
-    background: linear-gradient(180deg rgb(255, 1, 1), rgb(29, 8, 222));
-} */
+.bg-video-stream-gradient {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.min-h-screen-custom {
+    height: max(calc(100dvh - 3px), 100vh);
+}

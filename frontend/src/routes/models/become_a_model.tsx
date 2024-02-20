@@ -36,12 +36,11 @@ const BecomeAModel = () => {
         <div className="px-4 py-6 ">
             <h1 className="text-lg md:hidden block font-bold">Become a Model</h1>
             <div>
-                <input type="text" placeholder="First name" className="border mt-2 p-4 w-full rounded-lg pl-5 outline-none" />
-                <input type="text" placeholder="Last name" className="border p-4 mt-4 w-full rounded-lg pl-5 outline-none" />
-                <input type="date" placeholder="Date of Birth" className="border p-4 mt-4 w-full rounded-lg pl-5 outline-none" />
-
+                <input type="text" placeholder="First name" className="border mt-2 p-4 w-full rounded-lg pl-5 font-semibold outline-none" />
+                <input type="text" placeholder="Last name" className="border p-4 mt-4 w-full rounded-lg pl-5 font-semibold outline-none" />
+                <input type="date" placeholder="Date of Birth" className="border p-4 mt-4 w-full rounded-lg pl-5 font-semibold outline-none" />
                 <button className="border p-4 mt-4  rounded-lg pl-5  outline-none  relative w-full">
-                    <span className="flex gap-2 items-center font-medium text-xs  "
+                    <span className="flex gap-2 items-center text-sm font-semibold  "
                         onClick={() => setDropdown(!dropdown)}
                     >
                         {postAudience.icon} {postAudience.name}
@@ -62,16 +61,16 @@ const BecomeAModel = () => {
                         </ul>
                     </div>
                 </button>
-                <input type="text" placeholder="Choose Country" className="border p-4 mt-4 w-full rounded-lg pl-5 outline-none" />
+                <input type="text" placeholder="Choose Country" className="border p-4 mt-4 w-full rounded-lg pl-5 font-semibold outline-none" />
             </div>
             <div className="mt-4 px">
 
                 <p >Are you available for Hookup?</p>
-                <label className="inline-flex mt-3 items-center gap-2 text-gray-500" htmlFor="yes">
+                <label className="inline-flex mt-3 items-center font-medium gap-2 text-gray-500" htmlFor="yes">
                     <input type="checkbox" id="yes" className="accent-primary-dark-pink outline-none" />
                     Yes
                 </label>
-                <label className="inline-flex items-center gap-2 ml-4 text-gray-500" htmlFor="no" >
+                <label className="inline-flex items-center font-medium gap-2 ml-4 text-gray-500" htmlFor="no" >
                     <input type="checkbox" id="no" className="accent-primary-dark-pink outline-none" />
                     No
                     <label ></label>
